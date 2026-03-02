@@ -7,12 +7,32 @@ export default function Contact() {
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Logic to be configured later as per user request
-        console.log('Contact form submitted:', { email, message });
         setStatus('sending');
-        setTimeout(() => setStatus('sent'), 1000);
+
+        try {
+            const response = await fetch('https://n8n.julien-castellano.fr/webhook-test/utilisateur', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, message }),
+            });
+
+            if (response.ok) {
+                setStatus('sent');
+                setEmail('');
+                setMessage('');
+            } else {
+                setStatus('idle');
+                alert("Une erreur s'est produite lors de l'envoi. Veuillez réessayer.");
+            }
+        } catch (error) {
+            console.error("Erreur d'envoi", error);
+            setStatus('idle');
+            alert("Une erreur réseau s'est produite. Veuillez vérifier votre connexion.");
+        }
     };
 
     return (
