@@ -30,6 +30,7 @@ export default function Layout() {
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-sm font-medium hover:text-purple-400 transition-colors">Accueil</Link>
             <Link to="/destinations" className="text-sm font-medium hover:text-purple-400 transition-colors">Destinations</Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-purple-400 transition-colors">Contact</Link>
           </nav>
 
           <Link to="/booking" className="hidden md:block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm font-medium transition-colors">
@@ -55,6 +56,7 @@ export default function Layout() {
             <nav className="flex flex-col gap-6 text-center">
               <Link to="/" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Accueil</Link>
               <Link to="/destinations" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Destinations</Link>
+              <Link to="/contact" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Contact</Link>
               <Link to="/booking" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Réservation</Link>
               <Link to="/about" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>À Propos</Link>
               <Link to="/booking" className="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-lg font-bold transition-colors inline-block mx-auto" onClick={closeMenu}>
@@ -87,6 +89,7 @@ export default function Layout() {
             <h3 className="font-bold mb-4">À Propos</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><Link to="/about" className="hover:text-purple-400">Notre Histoire</Link></li>
+              <li><Link to="/contact" className="hover:text-purple-400">Contact</Link></li>
             </ul>
           </div>
 
@@ -102,10 +105,9 @@ export default function Layout() {
 
           <div className="md:text-right">
             <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-sm text-gray-400">
-              2 place de l'europe<br />
-              31000 Toulouse<br />
-              contact@timetravel.agency
+            <p className="text-sm text-gray-400 italic">
+              Prêt pour votre prochain saut ?<br />
+              Répondez à l'appel du temps.
             </p>
           </div>
         </div>
