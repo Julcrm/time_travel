@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Menu, X } from 'lucide-react';
 import Chatbot from './Chatbot';
 
@@ -26,7 +26,7 @@ export default function Layout() {
             <Clock className="w-8 h-8 text-purple-500" />
             <span>TimeTravel<span className="text-purple-500">Agency</span></span>
           </Link>
-          
+
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-sm font-medium hover:text-purple-400 transition-colors">Accueil</Link>
             <Link to="/destinations" className="text-sm font-medium hover:text-purple-400 transition-colors">Destinations</Link>
@@ -35,7 +35,7 @@ export default function Layout() {
           <Link to="/booking" className="hidden md:block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm font-medium transition-colors">
             Réserver
           </Link>
-          
+
           {/* Mobile Menu Button */}
           <button className="md:hidden p-2 text-white" onClick={toggleMenu} aria-label="Toggle menu">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,7 +68,7 @@ export default function Layout() {
       <main className="flex-grow pt-20">
         <Outlet />
       </main>
-      
+
       <Chatbot />
 
       <footer className="bg-black border-t border-white/10 py-12 mt-20">

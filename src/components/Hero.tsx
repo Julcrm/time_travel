@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -8,10 +8,10 @@ export default function Hero() {
       {/* Background Video/Animation Placeholder */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#050505] z-10"></div>
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
           className="w-full h-full object-cover opacity-60"
           poster="https://picsum.photos/seed/time/1920/1080"
@@ -36,16 +36,16 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
             Vivez l'effervescence de Paris 1889, la grandeur sauvage du Crétacé ou l'âge d'or de la Renaissance à Florence. Votre voyage vous attend.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link 
-              to="/destinations" 
+            <Link
+              to="/destinations"
               className="px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all transform hover:scale-105 flex items-center gap-2"
             >
               Explorer les Époques <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link 
-              to="/booking" 
+            <Link
+              to="/booking"
               className="px-8 py-4 bg-transparent border border-white/30 text-white font-bold rounded-full hover:bg-white/10 transition-all backdrop-blur-sm"
             >
               Réserver Votre Voyage
@@ -53,9 +53,9 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
-      
+
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
