@@ -74,11 +74,16 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2">
-              <img
-                src="https://picsum.photos/seed/agency/800/600"
-                alt="QG TimeTravel Agency"
-                className="rounded-2xl shadow-2xl shadow-purple-500/20 border border-white/10"
-              />
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl shadow-purple-500/20 border border-white/10">
+                <iframe
+                  src="https://www.youtube.com/embed/pSp9idycDeY?autoplay=1&mute=1&loop=1&playlist=pSp9idycDeY&controls=0&modestbranding=1&rel=0"
+                  title="TimeTravel Agency Presentation"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full border-0"
+                ></iframe>
+              </div>
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">Voyagez au-delà de l'Histoire</h2>
