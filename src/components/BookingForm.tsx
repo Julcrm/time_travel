@@ -80,6 +80,8 @@ export default function BookingForm() {
     );
   }
 
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -152,6 +154,7 @@ export default function BookingForm() {
           <input
             type="date"
             name="date"
+            min={today}
             value={formData.date}
             onChange={handleChange}
             required
