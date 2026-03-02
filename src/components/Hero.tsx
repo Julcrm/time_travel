@@ -14,7 +14,8 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-60"
-          poster="/asset/destinations/testimagedepart2.png"
+          poster="/destinations/testimagedepart2.png"
+
         >
           <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la balise vidéo.
