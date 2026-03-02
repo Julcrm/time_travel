@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, Menu, X } from 'lucide-react';
@@ -7,6 +7,11 @@ import Chatbot from './Chatbot';
 export default function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   // Close menu when route changes
   if (isMenuOpen) {
@@ -74,7 +79,7 @@ export default function Layout() {
       <Chatbot />
 
       <footer className="bg-black border-t border-white/10 py-12 mt-20">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-2 text-xl font-bold font-display mb-4">
               <img src="/asset/logo/logo_fond_transparent.png" alt="TimeTravel Agency Logo" className="h-8 w-auto object-contain" />
@@ -93,7 +98,7 @@ export default function Layout() {
             </ul>
           </div>
 
-          <div className="md:text-center">
+          <div className="md:text-right">
             <h3 className="font-bold mb-4">Projet IA M1 Data/IA</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>Romain Collery</li>
@@ -102,17 +107,9 @@ export default function Layout() {
               <li>Julien Castellano</li>
             </ul>
           </div>
-
-          <div className="md:text-right">
-            <h3 className="font-bold mb-4">Contact</h3>
-            <p className="text-sm text-gray-400 italic">
-              Prêt pour votre prochain saut ?<br />
-              Répondez à l'appel du temps.
-            </p>
-          </div>
         </div>
         <div className="container mx-auto px-6 mt-12 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-          © 2050 TimeTravel Agency. Tous droits réservés.
+          © 2026 TimeTravel Agency. Tous droits réservés.
         </div>
       </footer>
     </div>
