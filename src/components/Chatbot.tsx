@@ -121,7 +121,7 @@ export default function Chatbot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Posez une question sur l'ère Jurassique..."
+                  placeholder="Je suis là pour vous aider...."
                   className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors"
                 />
                 <button
