@@ -48,6 +48,25 @@ export default function About() {
 
       {/* Story Section */}
       <section className="py-20">
+        <div className="container mx-auto px-6 mb-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-6 order-2 md:order-1">
+            <h2 className="text-3xl font-bold font-display">Les Origines : Le Projet Chronos</h2>
+            <p className="text-gray-300 leading-relaxed">
+              Tout a commencé en 2018, dans un bunker de recherche confiné sous les Alpes. Une équipe internationale de physiciens, dirigée anonymement, a réussi la première percée dans le continuum espace-temps. Les premiers "téléporteurs" n'étaient pas les élégantes arches lumineuses que nous utilisons aujourd'hui : c'étaient des mastodontes de métal capricieux, consommant l'énergie d'une ville entière pour envoyer un simple objet inanimé quelques minutes dans le futur.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              En 2022, le premier saut humain a eu lieu. Ce fut un succès scientifique, mais une épreuve terrifiante. Les premiers voyageurs étaient confrontés aux "turbulences temporelles", risquant à chaque seconde de créer des fractures causales ou d'être perdus dans le vortex de l'oubli. La technologie était brute, imprévisible. Il fallait un miracle pour démocratiser ce pouvoir.
+            </p>
+          </div>
+          <div className="order-1 md:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"
+              alt="Premier prototype de téléporteur"
+              className="rounded-2xl shadow-2xl shadow-purple-500/20 border border-white/10"
+            />
+          </div>
+        </div>
+
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <img
@@ -57,7 +76,7 @@ export default function About() {
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold font-display">La Technologie Chrono-Shield™</h2>
+            <h2 id="chrono-shield" className="scroll-mt-24 text-3xl font-bold font-display">La Technologie Chrono-Shield™</h2>
             <p className="text-gray-300 leading-relaxed">
               Le voyage dans le temps comportait autrefois des risques incalculables. Paradoxes, altérations de la réalité, dangers biologiques...
               Tout cela appartient au passé grâce au Dr. Elena Vasquez et son équipe.

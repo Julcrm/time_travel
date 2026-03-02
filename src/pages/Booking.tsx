@@ -1,10 +1,12 @@
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
+import { CheckCircle } from 'lucide-react';
 import BookingForm from '../components/BookingForm';
 
 export default function Booking() {
   return (
     <div className="container mx-auto px-6 py-12 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -22,24 +24,34 @@ export default function Booking() {
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">1</div>
+              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                <CheckCircle className="w-5 h-5" />
+              </div>
               <div>
-                <h3 className="font-bold text-white">Choisissez votre destination</h3>
-                <p className="text-sm text-gray-500">Choisissez parmi notre liste d'époques sélectionnées.</p>
+                <h3 className="font-bold text-white">Service Tout Compris</h3>
+                <p className="text-sm text-gray-500">Vol temporel, hébergement d'époque et équipement furtif inclus.</p>
               </div>
             </div>
+
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">2</div>
+              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                <CheckCircle className="w-5 h-5" />
+              </div>
               <div>
-                <h3 className="font-bold text-white">Choisissez une date</h3>
-                <p className="text-sm text-gray-500">Quand voulez-vous quitter le présent ?</p>
+                <Link to="/about#chrono-shield" className="font-bold text-white hover:text-purple-400 flex items-center gap-1 transition-colors">
+                  Assurance Chrono-Shield™
+                </Link>
+                <p className="text-sm text-gray-500">Zéro paradoxe garanti. Notre bulle temporelle vous protège de toute altération causale.</p>
               </div>
             </div>
+
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">3</div>
+              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                <CheckCircle className="w-5 h-5" />
+              </div>
               <div>
-                <h3 className="font-bold text-white">Préparez-vous</h3>
-                <p className="text-sm text-gray-500">Recevez votre briefing et équipez-vous.</p>
+                <h3 className="font-bold text-white">Dépaysé ou Remboursé</h3>
+                <p className="text-sm text-gray-500">Si le frisson n'est pas au rendez-vous, nous annulons votre voyage (et vos souvenirs) sans frais.</p>
               </div>
             </div>
           </div>

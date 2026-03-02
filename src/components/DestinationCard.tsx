@@ -49,7 +49,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
         </div>
 
         <p className="text-gray-400 text-sm line-clamp-2 mb-4">
-          {destination.description}
+          {destination.shortDescription}
         </p>
 
         <div className="flex flex-wrap gap-2">

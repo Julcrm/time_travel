@@ -26,9 +26,9 @@ export default function DestinationDetail() {
       {/* Hero Image */}
       <div className="relative h-[60vh] w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-[#050505] z-10"></div>
-        <img 
-          src={destination.imageUrl} 
-          alt={destination.name} 
+        <img
+          src={destination.imageUrl}
+          alt={destination.name}
           className="w-full h-full object-cover"
         />
         <div className="absolute top-6 left-6 z-20">
@@ -59,7 +59,7 @@ export default function DestinationDetail() {
         <div className="lg:col-span-2 space-y-8">
           <div>
             <h2 className="text-2xl font-bold font-display mb-4 text-white">À propos de cette époque</h2>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-300 leading-relaxed text-lg whitespace-pre-line">
               {destination.description}
             </p>
           </div>
@@ -119,13 +119,13 @@ export default function DestinationDetail() {
               </div>
             </div>
 
-            <Link 
+            <Link
               to={`/booking?destination=${destination.id}`}
               className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl shadow-lg shadow-purple-500/25 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2"
             >
               Réserver Maintenant <ArrowRight className="w-5 h-5" />
             </Link>
-            
+
             <p className="text-center text-xs text-gray-500 mt-4">
               Inclus : Assurance Chrono-Shield™, Guide IA, et équipement d'époque.
             </p>
