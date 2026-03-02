@@ -12,7 +12,7 @@ export default function Contact() {
         setStatus('sending');
 
         try {
-            const response = await fetch('https://n8n.julien-castellano.fr/webhook-test/utilisateur', {
+            const response = await fetch('https://n8n.julien-castellano.fr/webhook/utilisateur', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

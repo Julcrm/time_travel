@@ -23,7 +23,7 @@ export default function Layout() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-2xl font-bold font-display tracking-tighter hover:text-purple-400 transition-colors" onClick={closeMenu}>
-            <Clock className="w-8 h-8 text-purple-500" />
+            <img src="/asset/logo/logo_fond_transparent.png" alt="TimeTravel Agency Logo" className="h-10 w-auto object-contain" />
             <span>TimeTravel<span className="text-purple-500">Agency</span></span>
           </Link>
 
@@ -77,7 +77,7 @@ export default function Layout() {
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 text-xl font-bold font-display mb-4">
-              <Clock className="w-6 h-6 text-purple-500" />
+              <img src="/asset/logo/logo_fond_transparent.png" alt="TimeTravel Agency Logo" className="h-8 w-auto object-contain" />
               <span>TimeTravel</span>
             </div>
             <p className="text-gray-400 text-sm">
