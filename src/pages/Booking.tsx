@@ -19,19 +19,19 @@ export default function Booking() {
           <p className="text-gray-400 text-lg mb-8">
             Prêt à embarquer pour le voyage d'une vie ? Remplissez le formulaire pour réserver votre place dans la chronologie.
           </p>
-          
+
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">1</div>
               <div>
-                <h3 className="font-bold text-white">Choisissez Votre Destination</h3>
+                <h3 className="font-bold text-white">Choisissez votre destination</h3>
                 <p className="text-sm text-gray-500">Choisissez parmi notre liste d'époques sélectionnées.</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">2</div>
               <div>
-                <h3 className="font-bold text-white">Choisissez une Date</h3>
+                <h3 className="font-bold text-white">Choisissez une date</h3>
                 <p className="text-sm text-gray-500">Quand voulez-vous quitter le présent ?</p>
               </div>
             </div>

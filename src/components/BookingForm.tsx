@@ -7,7 +7,7 @@ import { DESTINATIONS } from '../constants';
 export default function BookingForm() {
   const [searchParams] = useSearchParams();
   const initialDestinationId = searchParams.get('destination') || '';
-  
+
   const [formData, setFormData] = useState({
     destinationId: initialDestinationId,
     date: '',
@@ -15,7 +15,7 @@ export default function BookingForm() {
     name: '',
     email: ''
   });
-  
+
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   useEffect(() => {
@@ -29,19 +29,35 @@ export default function BookingForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
-    
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-    }, 1500);
+
+    try {
+      const response = await fetch('https://n8n.julien-castellano.fr/webhook/booking', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        setStatus('idle');
+        alert("Une erreur s'est produite lors de la réservation. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error("Erreur de réservation", error);
+      setStatus('idle');
+      alert("Une erreur réseau s'est produite. Veuillez vérifier votre connexion.");
+    }
   };
 
   if (status === 'success') {
     return (
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-green-500/10 border border-green-500/30 p-8 rounded-2xl text-center"
@@ -54,7 +70,7 @@ export default function BookingForm() {
           Votre voyage pour {DESTINATIONS.find(d => d.id === formData.destinationId)?.name} a été programmé.
           Vérifiez votre email pour votre carte d'embarquement.
         </p>
-        <button 
+        <button
           onClick={() => setStatus('idle')}
           className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium transition-colors"
         >
@@ -67,7 +83,7 @@ export default function BookingForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
+        <div className="space-y-2 md:col-span-2">
           <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
             <MapPin className="w-4 h-4" /> Destination
           </label>
@@ -87,17 +103,29 @@ export default function BookingForm() {
           </select>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
-            <Calendar className="w-4 h-4" /> Date de Départ
-          </label>
+        <div className="space-y-2 md:col-span-2">
+          <label className="text-sm font-medium text-gray-400">Nom Complet</label>
           <input
-            type="date"
-            name="date"
-            value={formData.date}
+            type="text"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors [color-scheme:dark]"
+            placeholder="Jean Dupont"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+          />
+        </div>
+
+        <div className="space-y-2 md:col-span-2">
+          <label className="text-sm font-medium text-gray-400">Adresse Email</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="jean@exemple.com"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
           />
         </div>
 
@@ -118,28 +146,16 @@ export default function BookingForm() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400">Nom Complet</label>
+          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
+            <Calendar className="w-4 h-4" /> Date de Départ
+          </label>
           <input
-            type="text"
-            name="name"
-            value={formData.name}
+            type="date"
+            name="date"
+            value={formData.date}
             onChange={handleChange}
             required
-            placeholder="Jean Dupont"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
-          />
-        </div>
-        
-        <div className="space-y-2 md:col-span-2">
-          <label className="text-sm font-medium text-gray-400">Adresse Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="jean@exemple.com"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors [color-scheme:dark]"
           />
         </div>
       </div>
