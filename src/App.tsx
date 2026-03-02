@@ -10,6 +10,8 @@ import Destinations from './pages/Destinations';
 import DestinationDetail from './pages/DestinationDetail';
 import Booking from './pages/Booking';
 import About from './pages/About';
+import Questionnaire from './pages/Questionnaire';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="destinations/:id" element={<DestinationDetail />} />
           <Route path="booking" element={<Booking />} />
           <Route path="about" element={<About />} />
+          <Route path="questionnaire" element={<Questionnaire />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
