@@ -1,11 +1,11 @@
 import { GoogleGenAI, Content } from "@google/genai";
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const ai = new GoogleGenAI({ apiKey });
 
 const SYSTEM_INSTRUCTION = `
 Vous êtes Chronos, le guide IA de l'agence TimeTravel.
-Votre rôle est d'aider les voyageurs à choisir leur prochaine destination temporelle, de répondre aux questions sur la sécurité et de fournir des faits historiques ou futuristes intrigants.
+Votre rôle est d'aider les voyageurs à choisir leur prochaine destination temporelle, de répondre aux questions sur la sécurité et de fournir des faits historiques intrigants.
 
 Ton : Mystérieux, sophistiqué, mais utile et rassurant.
 Informations Clés :
@@ -25,7 +25,7 @@ Répondez toujours en français.
 export async function sendMessageToGemini(message: string, history: Content[]) {
   try {
     const chat = ai.chats.create({
-      model: "gemini-2.5-flash-latest",
+      model: "gemini-2.5-flash-lite",
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
       },

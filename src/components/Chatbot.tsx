@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Sparkles } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { sendMessageToGemini } from '../services/gemini';
@@ -43,7 +43,7 @@ export default function Chatbot() {
       }));
 
       const responseText = await sendMessageToGemini(input, history);
-      
+
       setMessages(prev => [...prev, { role: 'model', text: responseText || "Pas de réponse." }]);
     } catch (error) {
       console.error("Chat error:", error);
@@ -76,7 +76,7 @@ export default function Chatbot() {
                 <Sparkles className="w-5 h-5 text-purple-400" />
                 <span className="font-display font-bold text-white">Chronos AI</span>
               </div>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-400 hover:text-white transition-colors"
               >
@@ -87,16 +87,15 @@ export default function Chatbot() {
             {/* Messages */}
             <div className="flex-grow overflow-y-auto p-4 space-y-4 custom-scrollbar">
               {messages.map((msg, idx) => (
-                <div 
-                  key={idx} 
+                <div
+                  key={idx}
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  <div 
-                    className={`max-w-[80%] p-3 rounded-2xl text-sm ${
-                      msg.role === 'user' 
-                        ? 'bg-purple-600 text-white rounded-tr-none' 
+                  <div
+                    className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === 'user'
+                        ? 'bg-purple-600 text-white rounded-tr-none'
                         : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
-                    }`}
+                      }`}
                   >
                     <ReactMarkdown>{msg.text}</ReactMarkdown>
                   </div>
@@ -125,7 +124,7 @@ export default function Chatbot() {
                   placeholder="Posez une question sur l'ère Jurassique..."
                   className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors"
                 />
-                <button 
+                <button
                   onClick={handleSend}
                   disabled={isLoading || !input.trim()}
                   className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"

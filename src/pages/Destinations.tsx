@@ -1,4 +1,4 @@
-import { motion } from 'motion/react';
+import { motion } from 'framer-motion';
 import { DESTINATIONS } from '../constants';
 import DestinationCard from '../components/DestinationCard';
 
@@ -6,7 +6,7 @@ export default function Destinations() {
   return (
     <div className="container mx-auto px-6 py-12">
       <div className="text-center mb-16">
-        <motion.h1 
+        <motion.h1
           className="text-4xl md:text-6xl font-bold font-display mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

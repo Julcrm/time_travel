@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Destination } from '../constants';
@@ -73,7 +73,7 @@ export default function Carousel({ destinations }: CarouselProps) {
               alt={destinations[currentIndex].name}
               className="w-full h-full object-cover"
             />
-            
+
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 z-20 text-center md:text-left">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
@@ -118,9 +118,8 @@ export default function Carousel({ destinations }: CarouselProps) {
               setDirection(index > currentIndex ? 1 : -1);
               setCurrentIndex(index);
             }}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentIndex ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'
+              }`}
           />
         ))}
       </div>
