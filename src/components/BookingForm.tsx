@@ -34,7 +34,7 @@ export default function BookingForm() {
     setStatus('submitting');
 
     try {
-      const response = await fetch('https://n8n.julien-castellano.fr/webhook-test/booking', {
+      const response = await fetch('https://n8n.julien-castellano.fr/webhook/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
