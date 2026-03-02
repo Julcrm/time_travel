@@ -93,8 +93,8 @@ export default function Chatbot() {
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === 'user'
-                        ? 'bg-purple-600 text-white rounded-tr-none'
-                        : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
+                      ? 'bg-purple-600 text-white rounded-tr-none'
+                      : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
                       }`}
                   >
                     <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -121,7 +121,7 @@ export default function Chatbot() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Posez une question sur l'ère Jurassique..."
+                  placeholder="Je suis là pour vous aider...."
                   className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors"
                 />
                 <button

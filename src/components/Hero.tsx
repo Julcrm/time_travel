@@ -14,7 +14,7 @@ export default function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-60"
-          poster="https://picsum.photos/seed/time/1920/1080"
+          poster="/asset/destinations/testimagedepart2.png"
         >
           <source src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-space-1610-large.mp4" type="video/mp4" />
           Votre navigateur ne supporte pas la balise vidéo.
@@ -51,19 +51,16 @@ export default function Hero() {
               Réserver Votre Voyage
             </Link>
           </div>
+          <div className="mt-8">
+            <Link
+              to="/questionnaire"
+              className="text-purple-400 hover:text-purple-300 font-medium flex items-center justify-center gap-2 group transition-colors"
+            >
+              Vous hésitez ? <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
-          <div className="w-1 h-2 bg-white rounded-full"></div>
-        </div>
-      </motion.div>
     </section>
   );
 }
