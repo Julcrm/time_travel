@@ -129,7 +129,7 @@ La grille ci‑dessous reprend les catégories du référentiel :
 ### Documentation & Open Source
 - **README complet et clair** : ✔️ présente architecture, fonctionnalités, intégrations
 - **Prompts documentés** : ✔️ versions visibles dans `prompt_history/`
-- **Crédits et transparence** : ✔️ auteurs listés, outils IA mentionnés
+- **Crédits et transparence** : ✔️ outils IA mentionnés, version gratuite uniquement
 - **Réflexion sur le processus** : ✔️ explications sur l’utilisation de l’IA et workflow dans les docs
 
 ---
@@ -143,6 +143,7 @@ Rémi Meson
 
 
 **Assisté par** : Google Studio, Antigravity
+
 
 
 
