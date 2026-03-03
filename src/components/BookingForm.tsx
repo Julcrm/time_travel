@@ -34,12 +34,23 @@ export default function BookingForm() {
     setStatus('submitting');
 
     try {
+      // Calculer le prix total
+      const selectedDestination = DESTINATIONS.find(d => d.id === formData.destinationId);
+      const unitPrice = selectedDestination ? selectedDestination.price : 0;
+      const totalPrice = unitPrice * Number(formData.travelers);
+
+      const payload = {
+        ...formData,
+        unitPrice,
+        totalPrice
+      };
+
       const response = await fetch('https://n8n.julien-castellano.fr/webhook/booking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
