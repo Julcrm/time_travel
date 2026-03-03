@@ -1,4 +1,4 @@
-# TimeTravel Agency - Voyagez au-delà de l'Histoire 🚀🕰️
+# TimeTravel Agency - Voyagez au-delà de l'Histoire
 
 Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme web immersive et futuriste permettant de réserver des voyages dans le temps. Ce projet a été réalisé comme évaluation en **Projet IA M1 Data/IA** par Romain Collery, Charly Fournet, Rémi Meson et Julien Castellano.
 
@@ -8,7 +8,7 @@ Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme web im
 - [Tech Stack](#tech-stack)
 - [Architecture du Projet](#architecture-du-projet)
 - [Détail des Fonctionnalités](#détail-des-fonctionnalités)
-- [Intégrations Externes](#intégrations-externes)
+- [Outils utilisés](#outils-utilisés)
 
 ---
 
@@ -32,7 +32,7 @@ Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme web im
 | **Animations** | Framer Motion, Motion (Framer Motion v2 API) |
 | **UI & Icons** | Lucide React, React Markdown |
 | **Build & Dev** | Vite, TSC (TypeScript Compiler) |
-| **IA & Chat** | Google Generative AI (Gemini 2.5 Flash) |
+| **IA & Chat** | Google Generative AI (Gemini 2.5 Flash Lite) |
 | **Infrastructure** | Hetzner (VPS), Coolify (Déploiement), N8N (Automatisation) |
 
 ---
@@ -48,7 +48,7 @@ La structure complète du code et des composants est détaillée dans le fichier
 Un résumé des rôles principaux est donné ci-dessous, les explications détaillées sont disponibles dans : [documentation/features.md](./documentation/features.md).
 
 - **Exploration des destinations** : catalogue et fiches détaillées
-- **Réservation** : formulaire intelligent qui calcule le prix et déclenche un webhook
+- **Réservation** : envoie un formulaire de confirmation avec prix calculé
 - **Chatbot IA (Chronos)** : assistant conversationnel intégré
 - **Questionnaire** : quiz pour orienter l'utilisateur vers une destination
 - **Formulaire de contact** : envoi via webhook N8N
@@ -57,10 +57,13 @@ Un résumé des rôles principaux est donné ci-dessous, les explications détai
 
 ### 🤖 1. Chatbot IA (Chronos)
 
+**Prompt System** (voir `prompt_history/chatbot_bot.md`)
+
 - Rôle : Guide IA de l'agence TimeTravel
 - Ton : Mystérieux, sophistiqué, rassurant
 - Directives : Concision (< 100 mots), réponses en français, liens stylisés
 - Contexte : Connaît les 3 destinations + tarifs + technologie Chrono-Shield™
+- hi
 
 ### 📋 2. Questionnaire Personnalisé
 
@@ -102,7 +105,7 @@ Un résumé des rôles principaux est donné ci-dessous, les explications détai
 - Chatbot conversationnel temps réel
 - Coût optimisé (lite/flash)
 
-### 6. **Anti-Gravity**
+### 6. **Antigravity**
 - Amélioration du frontend
 - Bug fixes et optimisations
 - Intégration des webhooks N8N
@@ -119,6 +122,7 @@ Charly Fournet,
 Rémi Meson 
 
 
-**Assisté par** : Google Studio, Anti-Gravity
+**Assisté par** : Google Studio, Antigravity
+
 
 
