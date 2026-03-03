@@ -14,7 +14,7 @@ export default function Booking() {
         >
           <h1 className="text-4xl md:text-6xl font-bold font-display mb-6 leading-tight">
             Réservez Votre <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
               Place dans l'Histoire
             </span>
           </h1>
@@ -24,7 +24,7 @@ export default function Booking() {
 
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+              <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
                 <CheckCircle className="w-5 h-5" />
               </div>
               <div>
@@ -34,11 +34,11 @@ export default function Booking() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+              <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
                 <CheckCircle className="w-5 h-5" />
               </div>
               <div>
-                <Link to="/about#chrono-shield" className="font-bold text-white hover:text-purple-400 flex items-center gap-1 transition-colors">
+                <Link to="/about#chrono-shield" className="font-bold text-white hover:text-amber-400 flex items-center gap-1 transition-colors">
                   Assurance Chrono-Shield™
                 </Link>
                 <p className="text-sm text-gray-500">Zéro paradoxe garanti. Notre bulle temporelle vous protège de toute altération causale.</p>
@@ -46,7 +46,7 @@ export default function Booking() {
             </div>
 
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+              <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400">
                 <CheckCircle className="w-5 h-5" />
               </div>
               <div>

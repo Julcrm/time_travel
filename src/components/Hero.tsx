@@ -29,7 +29,7 @@ export default function Hero() {
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight mb-6 leading-tight">
             Voyagez à Travers <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-red-500">
               le Temps & l'Espace
             </span>
           </h1>
@@ -54,7 +54,7 @@ export default function Hero() {
           <div className="mt-8">
             <Link
               to="/questionnaire"
-              className="text-purple-400 hover:text-purple-300 font-medium flex items-center justify-center gap-2 group transition-colors"
+              className="text-amber-400 hover:text-amber-300 font-medium flex items-center justify-center gap-2 group transition-colors"
             >
               Vous hésitez ? <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>

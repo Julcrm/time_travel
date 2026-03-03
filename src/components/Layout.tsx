@@ -37,18 +37,18 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col bg-[#050505] text-white font-sans overflow-x-hidden">
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 text-2xl font-bold font-display tracking-tighter hover:text-purple-400 transition-colors" onClick={closeMenu}>
+          <Link to="/" className="flex items-center gap-2 text-2xl font-bold font-display tracking-tighter hover:text-amber-400 transition-colors" onClick={closeMenu}>
             <img src="/asset/logo/logo_fond_transparent.png" alt="TimeTravel Agency Logo" className="h-10 w-auto object-contain" />
-            <span>TimeTravel<span className="text-purple-500">Agency</span></span>
+            <span>TimeTravel<span className="text-amber-500">Agency</span></span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-medium hover:text-purple-400 transition-colors">Accueil</Link>
-            <Link to="/destinations" className="text-sm font-medium hover:text-purple-400 transition-colors">Destinations</Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-purple-400 transition-colors">Contact</Link>
+            <Link to="/" className="text-sm font-medium hover:text-amber-400 transition-colors">Accueil</Link>
+            <Link to="/destinations" className="text-sm font-medium hover:text-amber-400 transition-colors">Destinations</Link>
+            <Link to="/contact" className="text-sm font-medium hover:text-amber-400 transition-colors">Contact</Link>
           </nav>
 
-          <Link to="/booking" className="hidden md:block px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full text-sm font-medium transition-colors">
+          <Link to="/booking" className="hidden md:block px-6 py-2 bg-amber-600 hover:bg-amber-700 rounded-full text-sm font-medium transition-colors">
             Réserver
           </Link>
 
@@ -69,12 +69,12 @@ export default function Layout() {
             className="fixed inset-0 z-40 bg-black/95 pt-24 px-6 md:hidden"
           >
             <nav className="flex flex-col gap-6 text-center">
-              <Link to="/" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Accueil</Link>
-              <Link to="/destinations" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Destinations</Link>
-              <Link to="/contact" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Contact</Link>
-              <Link to="/booking" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>Réservation</Link>
-              <Link to="/about" className="text-2xl font-bold hover:text-purple-400 transition-colors" onClick={closeMenu}>À Propos</Link>
-              <Link to="/booking" className="mt-4 px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-lg font-bold transition-colors inline-block mx-auto" onClick={closeMenu}>
+              <Link to="/" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Accueil</Link>
+              <Link to="/destinations" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Destinations</Link>
+              <Link to="/contact" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Contact</Link>
+              <Link to="/booking" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Réservation</Link>
+              <Link to="/about" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>À Propos</Link>
+              <Link to="/booking" className="mt-4 px-8 py-3 bg-amber-600 hover:bg-amber-700 rounded-full text-lg font-bold transition-colors inline-block mx-auto" onClick={closeMenu}>
                 Réserver Maintenant
               </Link>
             </nav>
@@ -103,8 +103,8 @@ export default function Layout() {
           <div className="md:text-center">
             <h3 className="font-bold mb-4">À Propos</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li><Link to="/about" className="hover:text-purple-400">Notre Histoire</Link></li>
-              <li><Link to="/contact" className="hover:text-purple-400">Contact</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400">Notre Histoire</Link></li>
+              <li><Link to="/contact" className="hover:text-amber-400">Contact</Link></li>
             </ul>
           </div>
 

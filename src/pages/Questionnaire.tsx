@@ -94,8 +94,8 @@ export default function Questionnaire() {
                             className="text-center"
                         >
                             <div className="flex justify-center mb-8">
-                                <div className="p-4 bg-purple-500/10 rounded-full border border-purple-500/20">
-                                    <ClipboardList className="w-16 h-16 text-purple-500" />
+                                <div className="p-4 bg-amber-500/10 rounded-full border border-amber-500/20">
+                                    <ClipboardList className="w-16 h-16 text-amber-500" />
                                 </div>
                             </div>
                             <h1 className="text-4xl md:text-6xl font-bold font-display mb-6">Trouvez Votre Époque Idéale</h1>
@@ -104,7 +104,7 @@ export default function Questionnaire() {
                             </p>
                             <button
                                 onClick={handleStart}
-                                className="px-12 py-5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-full text-lg shadow-xl shadow-purple-500/20 transition-all transform hover:scale-105"
+                                className="px-12 py-5 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold rounded-full text-lg shadow-xl shadow-amber-500/20 transition-all transform hover:scale-105"
                             >
                                 Commencer le Test
                             </button>
@@ -124,7 +124,7 @@ export default function Questionnaire() {
                                     <motion.div
                                         initial={{ width: `${(currentStep - 1) * 33}%` }}
                                         animate={{ width: `${(currentStep) * 33.33}%` }}
-                                        className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
+                                        className="h-full bg-gradient-to-r from-amber-500 to-orange-500"
                                     />
                                 </div>
                                 <span className="text-sm font-mono text-gray-500 whitespace-nowrap">
@@ -141,12 +141,12 @@ export default function Questionnaire() {
                                     <button
                                         key={option.id}
                                         onClick={() => handleAnswer(option.target)}
-                                        className="group text-left p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-purple-500/50 transition-all flex items-center justify-between"
+                                        className="group text-left p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-amber-500/50 transition-all flex items-center justify-between"
                                     >
                                         <span className="text-lg text-gray-300 group-hover:text-white transition-colors">
                                             {option.text}
                                         </span>
-                                        <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" />
+                                        <ArrowRight className="w-5 h-5 text-gray-600 group-hover:text-amber-400 group-hover:translate-x-1 transition-all" />
                                     </button>
                                 ))}
                             </div>
@@ -165,12 +165,12 @@ export default function Questionnaire() {
                                     <Sparkles className="w-16 h-16 text-green-500" />
                                 </div>
                             </div>
-                            <p className="text-purple-400 font-bold tracking-widest uppercase mb-4">Votre destination idéale est :</p>
+                            <p className="text-amber-400 font-bold tracking-widest uppercase mb-4">Votre destination idéale est :</p>
                             <h2 className="text-5xl md:text-7xl font-bold font-display mb-12">
                                 {resultDestination.name}
                             </h2>
 
-                            <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl shadow-purple-500/10 border border-white/10 group">
+                            <div className="relative rounded-3xl overflow-hidden mb-12 shadow-2xl shadow-amber-500/10 border border-white/10 group">
                                 <img
                                     src={resultDestination.imageUrl}
                                     alt={resultDestination.name}
@@ -178,7 +178,7 @@ export default function Questionnaire() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8 text-left">
                                     <div className="flex items-center gap-2 text-gray-300 mb-2">
-                                        <MapPin className="w-4 h-4 text-purple-400" /> {resultDestination.year}
+                                        <MapPin className="w-4 h-4 text-amber-400" /> {resultDestination.year}
                                     </div>
                                     <p className="text-lg text-gray-200 line-clamp-2 max-w-xl">
                                         {resultDestination.description}

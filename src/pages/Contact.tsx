@@ -52,8 +52,8 @@ export default function Contact() {
 
                         <div className="space-y-8">
                             <div className="flex items-start gap-4">
-                                <div className="p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
-                                    <ClockIcon className="w-6 h-6 text-purple-500" />
+                                <div className="p-3 bg-amber-500/10 rounded-lg border border-amber-500/20">
+                                    <ClockIcon className="w-6 h-6 text-amber-500" />
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-white">Disponibilité</h3>
@@ -79,7 +79,7 @@ export default function Contact() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="nom@exemple.com"
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-purple-500 transition-colors text-white"
+                                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-amber-500 transition-colors text-white"
                                     />
                                 </div>
                             </div>
@@ -97,7 +97,7 @@ export default function Contact() {
                                         onChange={(e) => setMessage(e.target.value)}
                                         placeholder="Comment pouvons-nous vous aider ?"
                                         rows={5}
-                                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-purple-500 transition-colors text-white resize-none"
+                                        className="w-full bg-white/5 border border-white/10 rounded-xl py-4 pl-12 pr-4 focus:outline-none focus:border-amber-500 transition-colors text-white resize-none"
                                     />
                                 </div>
                             </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                             <button
                                 type="submit"
                                 disabled={status !== 'idle'}
-                                className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-xl shadow-lg shadow-purple-500/20 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:transform-none"
+                                className="w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold rounded-xl shadow-lg shadow-amber-500/20 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2 disabled:opacity-50 disabled:transform-none"
                             >
                                 {status === 'idle' && (
                                     <>
