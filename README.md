@@ -1,56 +1,257 @@
 # TimeTravel Agency - Voyagez au-delà de l'Histoire 🚀🕰️
 
-Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme immersive et futuriste permettant de réserver des voyages dans le temps. Ce projet a été réalisé dans le cadre de l'évaluation du **Projet Supervisé IA M1/M2**.
+Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme web immersive et futuriste permettant de réserver des voyages dans le temps. Ce projet a été réalisé comme évaluation en **Projet IA M1 Data/IA** par Romain Collery, Charly Fournet, Rémi Meson et Julien Castellano.
 
-## 🎯 Critères d'Évaluation
+## 📋 Table des Matières
 
-Ce README est structuré pour démontrer comment le projet répond aux exigences de la grille de notation.
-
-### 1. Technique (8 Pts / 20)
-* **Webapp fonctionnelle et déployée** : L'application est développée avec l'écosystème moderne React (Vite), TypeScript et TailwindCSS. Elle est entièrement fonctionnelle, avec un routage complet (Accueil, Destinations, À Propos, Contact, Réservation, Questionnaire).
-* **Qualité du code généré et structure** : L'architecture du projet est modulaire. L'utilisation de composants réutilisables (ex: `DestinationCard`, `Sparkles`, `Carousel`), la centralisation des données (fichier `constants.ts`), et le typage strict avec TypeScript assurent un code robuste, clair et maintenable.
-* **Intégration réussie des assets Session 1** : Les assets (images, logos, vidéo) ont été soigneusement intégrés et combinés aux ressources externes pour enrichir l'immersion (logo dans le Header/Footer, images dans les fiches de destinations, intégration d'une vidéo YouTube en Hero).
-* **Utilisation pertinente des outils IA** : Le développement de cette application a été activement assisté par une IA de pair-programming, permettant d'accélérer la construction de l'interface complexe (animations Framer Motion, effet parallaxe), de restructurer le code et de gérer la connexion API avec des webhooks n8n.
-
-### 2. Fonctionnalités IA (6 Pts / 20)
-* **Agent conversationnel opérationnel et pertinent** : Le Chatbot "Chronos" est directement intégré au site (bulle persistante) et consomme l'API `@google/genai` (modèle Flash). Il maintient l'historique de la conversation pour accompagner les utilisateurs.
-* **Feature d'automatisation/personnalisation** : 
-  * Un questionnaire narratif ("Vous hésitez ?") détermine le profil de l'utilisateur (par ex. Amateur de Nature, Passionné d'Art) grâce à un algorithme de score pour recommander la destination temporelle la plus pertinente.
-  * Les formulaires (Contact, Réservation) sont branchés sur des **Webhooks n8n**. Par exemple, le prix total est calculé automatiquement (prix de l'époque × voyageurs) "sous le capot" avant envoi à n8n pour les facturations.
-* **Cohérence des réponses IA avec le contexte** : Le System Prompt de Chronos lui impose un ton spécifique ("Mystérieux mais rassurant"). Il transforme pertinemment les liens en "boutons markdown" stylisés en React grâce aux consignes données dans son prompt local.
-
-### 3. UX/UI & Créativité (4 Pts / 20)
-* **Design professionnel et cohérent** : Le site adopte une charte "Dark Mode / Cyberpunk chic" avec des dégradés (violet/rose), la technologie "Glassmorphism", et un grand soin apporté à la colorimétrie et aux polices pour plonger le visiteur dans l'imaginaire du voyage temporel.
-* **Navigation intuitive** : Header réactif transparent, ancres fluides (`scroll-content` pour éviter de se cacher sous la navbar) et boutons Call-To-Action directs rendent la consultation évidente. Menu optimisé pour terminaux mobiles.
-* **Animations subtiles et pertinentes** : Massive utilisation de `framer-motion`. Apparition des éléments au scroll (fade-in, slide-up), transitions progressives d'arrière-plan, et la pièce maîtresse : le composant **Sparkles parallax** (paillettes élégantes réagissant à la vitesse de défilement de l'utilisateur).
-* **Expérience utilisateur fluide** : Les retours d'actions (messages "Success" suite aux requêtes formulaires), la remise à zéro de la barre de défilement (scroll-to-top lors d'un changement de route) et l'IA en support limitent toute friction ou confusion.
-
-### 4. Documentation & Open Source (2 Pts / 20)
-* **README complet et clair** : Le présent document répond explicitement à cette exigence, listant ce qui a été produit et justifiant les notes attendues.
-* **Prompts documentés** : Les différentes versions itératives du prompt système du chatbot sont stockées dans le fichier `prompt_history/chatbot_bot.md`. Cela offre une trace de l'évolution des consignes (v1 à v3) pour raffiner son comportement.
-* **Crédits et transparence** : Code généré et assisté via Google Deepmind Antigravity. Toutes les suggestions UX/UI ont été co-réfléchies avec l'IA.
-* **Réflexion sur le processus** : L'utilisation de l'IA dépasse la simple génération : elle a servi pour debugger le rendu des ancres React, adapter dynamiquement le "Markdown" injecté dans le Chat, et paramétrer les appels Webhook distants. Travailler la directive contextuelle de l'IA du Chat (Prompt Engineering) s'est révélé indispensable pour obtenir de l'agent l'attitude d'un véritable "commercial temporel" de notre agence.
+- [Vue d'ensemble](#vue-densemble)
+- [Tech Stack](#tech-stack)
+- [Architecture du Projet](#architecture-du-projet)
+- [Détail des Fonctionnalités](#détail-des-fonctionnalités)
+- [Intégrations Externes](#intégrations-externes)
+- [Installation et Déploiement](#installation-et-déploiement)
+- [Support](#support)
 
 ---
 
-## 🛠️ Instructions Locales / Run Locally
+## 🌍 Vue d'Ensemble
 
-**Prérequis :** Node.js installé sur votre machine.
+**TimeTravel Agency** est une application Web moderne construite avec **React 19**, **TypeScript**, et **Vite**. Elle offre une expérience utilisateur immersive pour :
 
-1. Installez les dépendances :
+- **Explorer** 3 destinations temporelles uniques (Paris 1889, Crétacé -65M années, Florence 1504)
+- **Réserver** des voyages via un formulaire intelligent
+- **Interagir** avec un chatbot IA (Chronos) basé sur Google Gemini
+- **Découvrir** sa destination idéale via un questionnaire personnalisé
+- **Gérer** automatiquement les réservations via webhooks N8N
+
+Le design adopte une charte **Dark Mode / Cyberpunk** avec animations fluides en **Framer Motion** et un style glassmorphism via **Tailwind CSS v4**.
+
+---
+
+## 🛠️ Tech Stack
+
+| Domaine | Technologies |
+|---------|-------------|
+| **Frontend** | React 19, TypeScript 5.8, Vite 6, Tailwind CSS 4 |
+| **Animations** | Framer Motion, Motion (Framer Motion v2 API) |
+| **UI & Icons** | Lucide React, React Markdown |
+| **Routing** | React Router 7 |
+| **Build & Dev** | Vite, TSC (TypeScript Compiler) |
+| **IA & Chat** | Google Generative AI (Gemini 2.5 Flash) |
+| **Infrastructure** | Hetzner (VPS), Collify (Orchestration), N8N (Automatisation) |
+
+---
+
+## 📁 Architecture du Projet
+
+La structure complète du code et des composants est détaillée dans le fichier de documentation : [documentation/architecture.md](./documentation/architecture.md).
+
+---
+
+## 📊 Détail des Fonctionnalités
+
+Un résumé des rôles principaux est donné ci-dessous, les explications détaillées sont disponibles dans : [documentation/features.md](./documentation/features.md).
+
+- **Exploration des destinations** : catalogue et fiches détaillées
+- **Réservation** : formulaire intelligent qui calcule le prix et déclenche un webhook
+- **Chatbot IA (Chronos)** : assistant conversationnel intégré
+- **Questionnaire** : quiz pour orienter l'utilisateur vers une époque
+- **Formulaire de contact** : envoi via webhook N8N
+
+---
+
+### 🎯 1. Gestion des Destinations (constants.ts)
+
+**Interface `Destination`** :
+```typescript
+interface Destination {
+  id: string;          // paris-1889, cretaceous, florence-1504
+  name: string;        // Paris 1889, Crétacé, Florence 1504
+  era: 'Passé' | 'Présent' | 'Futur';
+  year: string;        // 1889, -65 Millions d'années
+  shortDescription: string;
+  description: string;
+  imageUrl: string;    // /asset/destinations/...
+  price: number;       // 4500, 6500, etc. (en €)
+  features: string[];  // [Tour Eiffel, Exposition, Cabarets]
+  details: {
+    climate: string;
+    currency: string;
+    languages: string;
+  };
+}
+```
+
+**Array `DESTINATIONS`** : 3 destinations hardcodées, alimentant toute l'app.
+
+### 🤖 2. Chatbot IA (Chronos)
+
+**Prompt System** (versions itérées, voir `prompt_history/chatbot_bot.md`) :
+- Rôle : Guide IA de l'agence TimeTravel
+- Ton : Mystérieux, sophistiqué, rassurant
+- Directives : Concision (< 100 mots), réponses en français, liens stylisés
+- Contexte : Connaît les 3 destinations + tarifs + technologie Chrono-Shield™
+
+**Flux de conversation** :
+1. Message utilisateur → `handleSend()`
+2. Historique formé en `Content[]` (format Gemini)
+3. Appel `sendMessageToGemini(message, history)`
+4. Réponse parsée en Markdown → affichée
+
+**Rendu Markdown** :
+- `<a>` tags transformés en boutons stylisés (gradient purple→pink)
+- Supports des liens hypertextes vers les pages du site
+
+### 📋 3. Questionnaire Personnalisé
+
+**3 questions** (defined in `Questionnaire.tsx`) :
+1. "Quel objet glisseriez-vous ?" → Florence, Paris, Crétacé
+2. "Ambiance sonore préférée ?" → Florence, Paris, Crétacé
+3. "Figure marquante ?" → Florence, Paris, Crétacé
+
+**Algorithme** :
+- Chaque réponse enregistre la destination cible
+- À la fin, compte les occurrences
+- Recommande celle avec le max d'occurrences
+- Affiche résultat avec info complète + CTA vers réservation
+
+**UI/UX** :
+- Animation entre écrans (fade-in/fade-out)
+- Barre de progression visuelle
+- Boutons "Commencer le Test" et options réponse interactive
+
+### 📝 4. Formulaire de Réservation
+
+**Flow** :
+1. Utilisateur remplit : Destination, Date, Voyageurs, Nom, Email
+2. Sur submit :
+   - Validation des champs
+   - Lookup du prix destination dans `DESTINATIONS`
+   - Calcul : `totalPrice = unitPrice × travelers`
+   - POST vers webhook N8N
+   ```json
+   {
+     "destinationId": "paris-1889",
+     "date": "2026-03-15",
+     "travelers": 2,
+     "name": "Jean Dupont",
+     "email": "jean@example.com",
+     "unitPrice": 4500,
+     "totalPrice": 9000
+   }
+   ```
+3. Réponse succès → Écran de confirmation
+4. Option : Réserver un autre voyage (reset form)
+
+**N8N Processing** :
+- Reçoit le webhook
+- Envoie email de confirmation au client
+- Notifie les administrateurs
+- Gère la facturation automatique
+
+---
+
+## 🌐 Intégrations Externes
+
+### 1. **Google Studio** (Fondations IA)
+- Génération initiale de la structure du projet
+- Prompt engineering pour les assets
+- Documentation de l'architecture IA
+
+### 2. **Hetzner (VPS)**
+- Hébergement du serveur production
+- Domaine : `timetravel.46.224.33.190.sslip.io`
+
+### 3. **Collify**
+- Orchestration et déploiement de l'infrastructure
+- Gestion des conteneurs (Dockerfile inclus)
+- Scaling automatique
+
+### 4. **N8N (Automatisation)**
+- Webhooks pour réservations et contacts
+- Intégration email
+- Notification administrateurs
+- Facturation et gestion de commandes
+- Endpoint : `https://n8n.julien-castellano.fr/webhook/booking`
+
+### 5. **Google Gemini API**
+- Modèle : `gemini-2.5-flash-lite`
+- Chatbot conversationnel temps réel
+- Coût optimisé (lite/flash)
+
+### 6. **Anti-Gravity (IA Pair-Programming)**
+- Amélioration du frontend
+- Bug fixes et optimisations
+- Intégration des webhooks N8N
+- Refinements animations et UX
+
+---
+
+## 🚀 Installation et Déploiement
+
+### **Prérequis**
+- Node.js 16+ 
+- npm ou yarn
+- Clé API Google Gemini
+
+### **Installation Locale**
+
+1. Clone et dépendances :
    ```bash
+   git clone <repo>
+   cd time_travel-main
    npm install
    ```
 
-2. Configuration des clés d'API :
-   Créez un fichier `.env.local` à la racine du projet et ajoutez votre clé API Gemini :
-   ```env
-   VITE_GEMINI_API_KEY=votre_cle_api_ici
+2. Configuration des variables d'environnement :
+   ```bash
+   # Créer .env.local
+   VITE_GEMINI_API_KEY=sk-xyz...
    ```
 
-3. Lancez l'application en mode développement :
+3. Lancer le serveur dev :
    ```bash
    npm run dev
    ```
+   Accédez via `http://localhost:3000`
 
-*(Démarrez cette commande et rendez-vous sur le localhost indiqué !)*
+4. Build de production :
+   ```bash
+   npm run build
+   npm run preview
+   ```
+
+### **Déploiement Production**
+
+- **Conteneur** : `Dockerfile` inclus pour Hetzner/Collify
+- **CI/CD** : Via Collify orchestration
+- **DNS** : `.sslip.io` pour self-hosting
+
+---
+
+---
+
+## 📄 Licence
+
+Apache License 2.0 - Voir fichier `LICENSE`
+
+---
+
+## 👥 Équipe
+
+Julien Castellano,
+Romain Collery, 
+Charly Fournet, 
+Rémi Meson 
+
+
+**Assisté par** : Google Studio, Anti-Gravity (IA Pair-Programming)
+
+---
+
+## Support
+
+Pour questions ou bugs :
+- Email : contact@timetravel-agency.fr
+- Formulaire de contact : `/contact`
+- Chatbot Chronos : Disponible 24/7 sur le site
