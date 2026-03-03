@@ -1,0 +1,70 @@
+{
+  "name": "mail_booking_time_travel",
+  "nodes": [
+    {
+      "parameters": {
+        "fromEmail": "no-reply@time-travel.atelierpixel42.com",
+        "toEmail": "={{ $json.body.email }}",
+        "subject": "=Time Travel Réservation {{ $json.body.name }}, le {{ $json.body.date }}",
+        "html": "=<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <style>\n        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; margin: 0; padding: 20px; }\n        .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }\n        .header { background: #2c3e50; color: #ffffff; padding: 30px; text-align: center; }\n        .header h1 { margin: 0; font-size: 24px; letter-spacing: 1px; }\n        .content { padding: 30px; }\n        .destination { font-size: 20px; font-weight: bold; color: #e67e22; text-transform: capitalize; }\n        .details-table { width: 100%; border-collapse: collapse; margin-top: 20px; }\n        .details-table td { padding: 12px 0; border-bottom: 1px solid #eee; }\n        .label { color: #7f8c8d; font-weight: 600; width: 45%; }\n        .value { text-align: right; font-weight: 500; }\n        .total-row td { font-size: 1.2em; color: #27ae60; font-weight: bold; border-bottom: none; padding-top: 20px; }\n        .footer { background: #f9f9f9; padding: 20px; text-align: center; font-size: 12px; color: #bdc3c7; }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>Confirmation de Réservation</h1>\n            <p>Préparez vos valises, {{ $json.body.name }} !</p>\n        </div>\n        \n        <div class=\"content\">\n            <p>Bonjour <strong>{{ $json.body.name }}</strong>,</p>\n            <p>Votre voyage vers la destination <span class=\"destination\">{{ $json.body.destinationId }}</span> est officiellement confirmé.</p>\n            \n            <table class=\"details-table\">\n                <tr>\n                    <td class=\"label\">Date du départ</td>\n                    <td class=\"value\">{{ $json.body.date }}</td>\n                </tr>\n                <tr>\n                    <td class=\"label\">Voyageurs</td>\n                    <td class=\"value\">{{ $json.body.travelers }} personne(s)</td>\n                </tr>\n                <tr>\n                    <td class=\"label\">Prix unitaire</td>\n                    <td class=\"value\">{{ $json.body.unitPrice }} €</td>\n                </tr>\n                <tr class=\"total-row\">\n                    <td class=\"label\">Prix Total</td>\n                    <td class=\"value\">{{ $json.body.totalPrice }} €</td>\n                </tr>\n            </table>\n        </div>\n\n        <div class=\"footer\">\n            <p>ID de transaction : {{ $json.body.destinationId }}-2026</p>\n            <p>&copy; 2026 Agence de Voyage Temporelle</p>\n        </div>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        16,
+        -96
+      ],
+      "id": "b7f54602-5906-410e-b87e-f14611a2c69a",
+      "name": "Send email",
+      "webhookId": "fcd4333e-284f-4010-b27f-34a732770a73",
+      "credentials": {
+        "smtp": {
+          "id": "z6xPRIjfNLblXIYO",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "booking",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -272,
+        -48
+      ],
+      "id": "599f936b-e68c-4f97-aad8-3bf81b794064",
+      "name": "Webhook",
+      "webhookId": "1bb3d73b-e1aa-4d5a-95cb-2e626d6e0cf3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "ca7bd863-5989-4cea-8ea0-84670d099241",
+  "meta": {
+    "instanceId": "2efcf4b5d376fd7701e404e67f3fbce41c0ef9dad6a431fb174ae62c4ace4b88"
+  },
+  "id": "H6D2TQKEgGFKL3jr",
+  "tags": []
+}

@@ -1,0 +1,70 @@
+{
+  "name": "sent_email_contact",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "utilisateur",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "30690ffa-ab24-4761-8816-635b933b560a",
+      "name": "Webhook",
+      "webhookId": "8a5bab4b-64f2-4b87-81ca-d50e2807d98c"
+    },
+    {
+      "parameters": {
+        "fromEmail": "no-reply@time-travel.atelierpixel42.com",
+        "toEmail": "={{ $json.body.email }}",
+        "subject": "test",
+        "html": "=<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <style>\n        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #050505; color: #ffffff; margin: 0; padding: 20px; line-height: 1.6; }\n        .email-wrapper { max-width: 600px; margin: 0 auto; background-color: #121212; border-radius: 12px; border: 1px solid #252525; overflow: hidden; }\n        .header { background: linear-gradient(90deg, #8e2de2, #f00056); padding: 30px 20px; text-align: center; }\n        .header h1 { margin: 0; font-size: 24px; color: #ffffff; letter-spacing: 1px; }\n        .content { padding: 30px; color: #d1d1d1; }\n        .intro-text { font-size: 16px; margin-bottom: 20px; }\n        strong { color: #ffffff; }\n        .recap-box { background-color: #1a1a1a; border-left: 4px solid #f00056; padding: 15px 20px; margin: 25px 0; border-radius: 0 8px 8px 0; }\n        .recap-label { font-size: 12px; color: #8e2de2; text-transform: uppercase; font-weight: bold; margin-bottom: 8px; display: block; }\n        .recap-text { margin: 0; font-style: italic; color: #a1a1a1; }\n        .highlight-box { background-color: rgba(142, 45, 226, 0.1); border: 1px solid rgba(142, 45, 226, 0.3); padding: 15px; border-radius: 8px; text-align: center; margin-top: 25px; }\n        .footer { background-color: #0a0a0a; padding: 20px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #252525; }\n        .footer a { color: #8e2de2; text-decoration: none; }\n    </style>\n</head>\n<body>\n    <div class=\"email-wrapper\">\n        <div class=\"header\">\n            <h1>Message bien reçu !</h1>\n        </div>\n        \n        <div class=\"content\">\n            <p class=\"intro-text\">Bonjour,</p>\n            <p class=\"intro-text\">Nous vous confirmons la bonne réception de votre demande. Notre équipe de <strong>Chrono-Conseillers</strong> a bien pris en compte votre message et s'engage à vous répondre dans les plus brefs délais.</p>\n            <p class=\"intro-text\">Rassurez-vous, le temps relatif joue en notre faveur : votre demande sera traitée avec la plus grande priorité.</p>\n            \n            <div class=\"recap-box\">\n                <span class=\"recap-label\">Rappel de votre message :</span>\n                <p class=\"recap-text\">\"{{ $json.body.message }}\"</p>\n            </div>\n\n               \n            </div>\n        </div>\n\n        <div class=\"footer\">\n\n        </div>\n    </div>\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "e661ecba-194d-45dc-af41-289a444426b0",
+      "name": "Send email",
+      "webhookId": "fcd4333e-284f-4010-b27f-34a732770a73",
+      "credentials": {
+        "smtp": {
+          "id": "z6xPRIjfNLblXIYO",
+          "name": "SMTP account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "23d25a8b-4316-4058-9a7e-c6cb1c507bea",
+  "meta": {
+    "instanceId": "2efcf4b5d376fd7701e404e67f3fbce41c0ef9dad6a431fb174ae62c4ace4b88"
+  },
+  "id": "0r1FvFq6tA2Jk4RT",
+  "tags": []
+}
