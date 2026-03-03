@@ -105,7 +105,34 @@ Un résumé des rôles principaux est donné ci-dessous, les explications détai
 - Amélioration animations et UX
 
 ---
+## 🧾 Grille d'évaluation
 
+La grille ci‑dessous reprend les catégories du référentiel fourni en PDF et indique l'état actuel du site :
+
+### Technique (8 Pts / 20)
+- **Webapp fonctionnelle et déployée** : ✔️ site React 19/Vite en production sur Hetzner
+- **Qualité du code généré et structure** : ✔️ architecture modulaire, TypeScript, composants réutilisables
+- **Intégration réussie des assets Session 1** : ✔️ logos, vidéos, images intégrés dans le design
+- **Utilisation pertinente des outils IA** : ✔️ Chatbot Gemini + pair programming IA, prompts versionnés
+
+### Fonctionnalités IA (6 Pts / 20)
+- **Agent conversationnel opérationnel et pertinent** : ✔️ Chronos répond, conserve l’historique et propose des liens stylisés
+- **Feature d'automatisation/personnalisation** : ✔️ Questionnaire adaptatif, webhooks N8N pour réservation et contact
+- **Cohérence des réponses IA avec le contexte** : ✔️ prompt engineering (voir `prompt_history/chatbot_bot.md`)
+
+### UX/UI & Créativité (4 Pts / 20)
+- **Design professionnel et cohérent** : ✔️ charte dark/cyberpunk, glassmorphism, dégradés
+- **Navigation intuitive** : ✔️ header responsive, menu mobile, scroll-to-top
+- **Animations subtiles et pertinentes** : ✔️ Framer Motion sur presque tous les composants
+- **Expérience utilisateur fluide** : ✔️ feedback formulaires, transitions, chatbot intégré
+
+### Documentation & Open Source (2 Pts / 20)
+- **README complet et clair** : ✔️ présente architecture, fonctionnalités, intégrations, installation
+- **Prompts documentés** : ✔️ versions visibles dans `prompt_history/`
+- **Crédits et transparence** : ✔️ auteurs listés, outils IA mentionnés
+- **Réflexion sur le processus** : ✔️ explications sur l’utilisation de l’IA et workflow dans les docs
+
+---
 
 ## 👥 Équipe
 
@@ -116,6 +143,7 @@ Rémi Meson
 
 
 **Assisté par** : Google Studio, Antigravity
+
 
 
 
