@@ -93,11 +93,24 @@ export default function Chatbot() {
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === 'user'
-                        ? 'bg-purple-600 text-white rounded-tr-none'
-                        : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
+                      ? 'bg-purple-600 text-white rounded-tr-none'
+                      : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
                       }`}
                   >
-                    <ReactMarkdown>{msg.text}</ReactMarkdown>
+                    <ReactMarkdown
+                      components={{
+                        a: ({ node, ...props }) => (
+                          <a
+                            {...props}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block mt-2 mb-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white font-medium text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-md shadow-purple-500/20"
+                          />
+                        )
+                      }}
+                    >
+                      {msg.text}
+                    </ReactMarkdown>
                   </div>
                 </div>
               ))}
