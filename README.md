@@ -113,10 +113,10 @@ La grille ci‑dessous reprend les catégories du référentiel :
 - **Webapp fonctionnelle et déployée** : ✔️ site React en production sur Hetzner
 - **Qualité du code généré et structure** : ✔️ architecture modulaire, TypeScript, composants réutilisables
 - **Intégration réussie des assets Session 1** : ✔️ logos, vidéos, images intégrés dans le design
-- **Utilisation pertinente des outils IA** : ✔️ Google Studio, N8N, Antigravity, gémini flash lite
+- **Utilisation pertinente des outils IA** : ✔️ Google Studio, N8N, Antigravity, Gemini flash lite
 
 ### Fonctionnalités IA
-- **Agent conversationnel opérationnel et pertinent** : ✔️ Chronos répond, conserve l’historique et propose des liens stylisés
+- **Agent conversationnel opérationnel et pertinent** : ✔️ Chronos répond, conserve l’historique et propose de rediriger l'utilisateur
 - **Feature d'automatisation/personnalisation** : ✔️ Questionnaire adaptatif, webhooks N8N pour réservation et contact
 - **Cohérence des réponses IA avec le contexte** : ✔️ prompt engineering (voir `prompt_history/chatbot_bot.md`)
 
@@ -143,6 +143,7 @@ Rémi Meson
 
 
 **Assisté par** : Google Studio, Antigravity
+
 
 
 
