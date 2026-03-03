@@ -10,7 +10,7 @@ interface DestinationCardProps {
 export default function DestinationCard({ destination }: DestinationCardProps) {
   return (
     <motion.div
-      className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all duration-300"
+      className="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-amber-500/50 transition-all duration-300"
       whileHover={{ y: -5 }}
     >
       <div className="relative h-64 overflow-hidden">
@@ -22,7 +22,7 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
           <Link
             to={`/destinations/${destination.id}`}
-            className="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg flex items-center justify-center gap-2 transition-colors"
+            className="w-full py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-lg flex items-center justify-center gap-2 transition-colors"
           >
             Explorer <ArrowRight className="w-4 h-4" />
           </Link>
@@ -32,10 +32,10 @@ export default function DestinationCard({ destination }: DestinationCardProps) {
 
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-xl font-bold font-display text-white group-hover:text-purple-400 transition-colors">
+          <h3 className="text-xl font-bold font-display text-white group-hover:text-amber-400 transition-colors">
             {destination.name}
           </h3>
-          <span className="text-purple-400 font-bold font-mono">
+          <span className="text-amber-400 font-bold font-mono">
             {destination.price.toLocaleString()} €
           </span>
         </div>

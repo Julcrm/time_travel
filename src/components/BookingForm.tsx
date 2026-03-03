@@ -105,7 +105,7 @@ export default function BookingForm() {
             value={formData.destinationId}
             onChange={handleChange}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
           >
             <option value="" disabled>Sélectionnez une destination</option>
             {DESTINATIONS.map(dest => (
@@ -125,7 +125,7 @@ export default function BookingForm() {
             onChange={handleChange}
             required
             placeholder="Jean Dupont"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
           />
         </div>
 
@@ -138,7 +138,7 @@ export default function BookingForm() {
             onChange={handleChange}
             required
             placeholder="jean@exemple.com"
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
           />
         </div>
 
@@ -154,7 +154,7 @@ export default function BookingForm() {
             value={formData.travelers}
             onChange={handleChange}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors"
           />
         </div>
 
@@ -169,7 +169,7 @@ export default function BookingForm() {
             value={formData.date}
             onChange={handleChange}
             required
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500 transition-colors [color-scheme:dark]"
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors [color-scheme:dark]"
           />
         </div>
       </div>
@@ -177,7 +177,7 @@ export default function BookingForm() {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg shadow-lg shadow-purple-500/25 transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full py-4 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold rounded-lg shadow-lg shadow-amber-500/25 transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'submitting' ? 'Traitement...' : 'Confirmer la Réservation'}
       </button>

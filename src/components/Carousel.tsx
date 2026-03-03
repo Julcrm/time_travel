@@ -86,7 +86,7 @@ export default function Carousel({ destinations }: CarouselProps) {
                 <h2 className="text-4xl md:text-6xl font-bold font-display text-white mb-4 drop-shadow-lg">
                   {destinations[currentIndex].name}
                 </h2>
-                <div className="flex items-center gap-2 text-purple-400 font-medium group-hover:text-purple-300 transition-colors md:justify-start justify-center">
+                <div className="flex items-center gap-2 text-amber-400 font-medium group-hover:text-amber-300 transition-colors md:justify-start justify-center">
                   Explorer cette époque <ArrowRight className="w-5 h-5" />
                 </div>
               </motion.div>

@@ -68,12 +68,12 @@ export default function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-24 right-6 w-96 h-[500px] bg-black/80 backdrop-blur-xl border border-purple-500/30 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 w-96 h-[500px] bg-black/80 backdrop-blur-xl border border-amber-500/30 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="p-4 bg-purple-900/20 border-b border-white/10 flex justify-between items-center">
+            <div className="p-4 bg-amber-900/20 border-b border-white/10 flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-purple-400" />
+                <Sparkles className="w-5 h-5 text-amber-400" />
                 <span className="font-display font-bold text-white">Chronos AI</span>
               </div>
               <button
@@ -93,7 +93,7 @@ export default function Chatbot() {
                 >
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.role === 'user'
-                      ? 'bg-purple-600 text-white rounded-tr-none'
+                      ? 'bg-amber-600 text-white rounded-tr-none'
                       : 'bg-white/10 text-gray-200 rounded-tl-none border border-white/5'
                       }`}
                   >
@@ -104,7 +104,7 @@ export default function Chatbot() {
                             {...props}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block mt-2 mb-1 px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white font-medium text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-md shadow-purple-500/20"
+                            className="inline-block mt-2 mb-1 px-4 py-2 bg-gradient-to-r from-amber-600 to-orange-600 rounded-lg text-white font-medium text-sm hover:from-amber-500 hover:to-orange-500 transition-all shadow-md shadow-amber-500/20"
                           />
                         )
                       }}
@@ -117,9 +117,9 @@ export default function Chatbot() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none border border-white/5 flex gap-1">
-                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce"></span>
-                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-100"></span>
-                    <span className="w-2 h-2 bg-purple-400 rounded-full animate-bounce delay-200"></span>
+                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce"></span>
+                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce delay-100"></span>
+                    <span className="w-2 h-2 bg-amber-400 rounded-full animate-bounce delay-200"></span>
                   </div>
                 </div>
               )}
@@ -135,12 +135,12 @@ export default function Chatbot() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Je suis là pour vous aider...."
-                  className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-purple-500 transition-colors"
+                  className="w-full bg-white/5 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
                 />
                 <button
                   onClick={handleSend}
                   disabled={isLoading || !input.trim()}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-purple-600 hover:bg-purple-700 rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-amber-600 hover:bg-amber-700 rounded-full text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send className="w-4 h-4" />
                 </button>
@@ -154,7 +154,7 @@ export default function Chatbot() {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full shadow-lg shadow-purple-500/40 flex items-center justify-center text-white z-50 border border-white/20"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full shadow-lg shadow-amber-500/40 flex items-center justify-center text-white z-50 border border-white/20"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageSquare className="w-6 h-6" />}
       </motion.button>

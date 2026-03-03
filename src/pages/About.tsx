@@ -6,7 +6,7 @@ export default function About() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-purple-900/10 z-0"></div>
+        <div className="absolute inset-0 bg-amber-900/10 z-0"></div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -27,19 +27,19 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-purple-500 font-display mb-2">2026</div>
+              <div className="text-4xl font-bold text-amber-500 font-display mb-2">2026</div>
               <div className="text-sm text-gray-400">Année de Fondation</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-500 font-display mb-2">10k+</div>
+              <div className="text-4xl font-bold text-amber-500 font-display mb-2">10k+</div>
               <div className="text-sm text-gray-400">Voyageurs Temporels</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-500 font-display mb-2">100%</div>
+              <div className="text-4xl font-bold text-amber-500 font-display mb-2">100%</div>
               <div className="text-sm text-gray-400">Taux de Sécurité</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-500 font-display mb-2">3</div>
+              <div className="text-4xl font-bold text-amber-500 font-display mb-2">3</div>
               <div className="text-sm text-gray-400">Époques Exclusives</div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1000"
               alt="Premier prototype de téléporteur"
-              className="rounded-2xl shadow-2xl shadow-purple-500/20 border border-white/10"
+              className="rounded-2xl shadow-2xl shadow-amber-500/20 border border-white/10"
             />
           </div>
         </div>
@@ -72,7 +72,7 @@ export default function About() {
             <img
               src="/asset/chrono_shield.png"
               alt="Laboratoire Temporel Chrono-Shield"
-              className="rounded-2xl shadow-2xl shadow-purple-500/20 border border-white/10"
+              className="rounded-2xl shadow-2xl shadow-amber-500/20 border border-white/10"
             />
           </div>
           <div className="space-y-6">
@@ -97,11 +97,11 @@ export default function About() {
                 <span className="font-medium">Anti-Paradoxe</span>
               </div>
               <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
-                <Users className="w-6 h-6 text-blue-400" />
+                <Users className="w-6 h-6 text-stone-400" />
                 <span className="font-medium">Guides Experts</span>
               </div>
               <div className="flex items-center gap-3 p-4 bg-white/5 rounded-xl">
-                <Award className="w-6 h-6 text-purple-400" />
+                <Award className="w-6 h-6 text-amber-400" />
                 <span className="font-medium">Certifié ISO-9001T</span>
               </div>
             </div>
