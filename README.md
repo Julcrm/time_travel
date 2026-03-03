@@ -2,14 +2,6 @@
 
 Bienvenue dans le dépôt du projet **TimeTravel Agency**, une plateforme web immersive et futuriste permettant de réserver des voyages dans le temps. Ce projet a été réalisé comme évaluation en **Projet IA M1 Data/IA** par Romain Collery, Charly Fournet, Rémi Meson et Julien Castellano.
 
-## 📋 Table des Matières
-
-- [Vue d'ensemble](#vue-densemble)
-- [Tech Stack](#tech-stack)
-- [Architecture du Projet](#architecture-du-projet)
-- [Détail des Fonctionnalités](#détail-des-fonctionnalités)
-- [Outils utilisés](#outils-utilisés)
-
 ---
 
 ## 🌍 Vue d'Ensemble
@@ -57,7 +49,7 @@ Un résumé des rôles principaux est donné ci-dessous, les explications détai
 
 ### 🤖 1. Chatbot IA (Chronos)
 
-**Prompt System** (voir `prompt_history/chatbot_bot.md`)
+**Prompt System** (voir `documentation/prompt_history/chatbot_bot.md`)
 
 - Rôle : Guide IA de l'agence TimeTravel
 - Ton : Mystérieux, sophistiqué, rassurant
@@ -123,6 +115,7 @@ Rémi Meson
 
 
 **Assisté par** : Google Studio, Antigravity
+
 
 
 
