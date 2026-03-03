@@ -29,7 +29,8 @@ Simple formulaire retournant un POST vers N8N. Le traitement côté N8N peut env
 La création du projet a été assistée par des outils IA :
 
 - **Google Studio** a généré les bases du code, la structure et certains assets.
-- **Anti-Gravity** a servi de pair-programming pour améliorer le front-end, corriger des bugs et itérer sur les prompts.
+- **Antigravity** a servi de pair-programming pour améliorer le front-end, corriger des bugs et itérer sur les prompts.
 - Les prompts sont versionnés dans `prompt_history/` (`chatbot_bot.md`, `antigravity.md`).
+
 
 
