@@ -45,6 +45,7 @@ export default function Layout() {
           <nav className="hidden md:flex items-center gap-8">
             <Link to="/" className="text-sm font-medium hover:text-amber-400 transition-colors">Accueil</Link>
             <Link to="/destinations" className="text-sm font-medium hover:text-amber-400 transition-colors">Destinations</Link>
+            <Link to="/questionnaire" className="text-sm font-medium hover:text-amber-400 transition-colors">Quizz</Link>
             <Link to="/contact" className="text-sm font-medium hover:text-amber-400 transition-colors">Contact</Link>
           </nav>
 
@@ -71,6 +72,7 @@ export default function Layout() {
             <nav className="flex flex-col gap-6 text-center">
               <Link to="/" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Accueil</Link>
               <Link to="/destinations" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Destinations</Link>
+              <Link to="/questionnaire" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Quizz</Link>
               <Link to="/contact" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Contact</Link>
               <Link to="/booking" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>Réservation</Link>
               <Link to="/about" className="text-2xl font-bold hover:text-amber-400 transition-colors" onClick={closeMenu}>À Propos</Link>
